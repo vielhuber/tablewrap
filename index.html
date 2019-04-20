@@ -7,8 +7,34 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/cssreset-min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>
+    let tablewrap = new tablewrap({ selector: 'table', viewport: 900 });
+    tablewrap.update();
+    tablewrap.destroy();
+
+    function callOnResize(mediaQuery, el) {    
+        if (mediaQuery.matches)
+        {
+               
+        }
+        else
+        {
+            let $cur = $(el).next('[data-tablewrap]');
+            while( $cur
+        }
+    }
     $(document).ready(function()
     {
+        $('[data-tablewrap]').each(function() {
+            let mediaQuery = window.matchMedia('(max-width: '+$(this).attr('data-tablewrap')+'px)');
+            let _self = this;
+            mediaQuery.addListener(function(e) { callOnResize(mediaQuery, _self); });
+            callOnResize(mediaQuery, _self);
+        });
+
+
+
+
+        /*
         let id = 1;
         $('[data-tblr]').each(function() {
             if( $(this).hasClass('tableflexr--shadow') )
@@ -55,6 +81,7 @@
             $('head').append('<style>'+css+'</style>');            
             id++;
         });
+        */
     });
     </script>
     <style>
@@ -77,7 +104,7 @@
 </head>
 <body>
 
-    <table data-tblr="900">
+    <table data-tablewrap="900">
         <tr>
             <td>1</td>
             <td>2</td>
