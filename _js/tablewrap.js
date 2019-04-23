@@ -1,3 +1,8 @@
+import 'mdn-polyfills/Array.prototype.forEach';
+import 'mdn-polyfills/NodeList.prototype.forEach';
+import 'mdn-polyfills/Node.prototype.remove';
+import 'mdn-polyfills/Node.prototype.after';
+
 export default class Tablewrap {
     args = {};
     tables = [];
@@ -18,10 +23,26 @@ export default class Tablewrap {
             let cols = el.querySelector('td').parentNode.children.length;
             let mobileTables = [];
             for (let col = 1; col <= cols; col++) {
+                if (
+                    'preserveFirstCol' in this.args &&
+                    this.args.preserveFirstCol === true &&
+                    col === 1
+                ) {
+                    continue;
+                }
                 let newDiv = el.cloneNode(true);
                 let toRemove = [];
                 newDiv.querySelectorAll('td').forEach(el2 => {
-                    if (this.prevAll(el2).length + 1 !== col) {
+                    if (
+                        ('preserveFirstCol' in this.args &&
+                            this.args.preserveFirstCol === true &&
+                            this.prevAll(el2).length !== 0 &&
+                            this.prevAll(el2).length + 1 !== col) ||
+                        (!(
+                            'preserveFirstCol' in this.args && this.args.preserveFirstCol === true
+                        ) &&
+                            this.prevAll(el2).length + 1 !== col)
+                    ) {
                         toRemove.push(el2);
                     }
                 });
