@@ -10,4 +10,4 @@
 /package-lock.json
 __image_snapshots__
 /.env
-/.vs_code/
+/.vscode/
