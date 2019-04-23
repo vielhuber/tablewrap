@@ -38,9 +38,9 @@
         "uglify": "^0.1.5"
     },
     "name": "tablewrap",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "",
-    "main": "_public/tablewrap.js",
+    "main": "_js/tablewrap.js",
     "author": "",
     "license": "ISC",
     "browserslist": [
