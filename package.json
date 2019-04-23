@@ -87,10 +87,10 @@
         "vueify-insert-css": "^1.0.0",
         "whatwg-fetch": "^3.0.0"
     },
-    "name": "boilerplate",
-    "version": "1.0.0",
+    "name": "tablewrap",
+    "version": "1.0.1",
     "description": "",
-    "main": "_public/bundle.js",
+    "main": "_public/tablewrap.js",
     "author": "",
     "license": "ISC",
     "browserslist": [
