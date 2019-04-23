@@ -2,9 +2,10 @@
     "scripts": {
         "js:browserify": "browserify ./_js/tablewrap.js --outfile ./_public/tablewrap.js --debug --transform babelify",
         "js:uglify": "uglifyjs --compress --mangle --output ./_public/tablewrap.js ./_public/tablewrap.js",
+        "js:babel": "npx babel ./_js/ --out-dir ./_build/_js/",
         "js:demo:browserify": "browserify ./_js/demo.js --outfile ./_public/demo.js --debug --transform babelify",
-        "js": "npm-run-all --sequential js:browserify js:uglify js:demo:browserify",
-        "js:dev": "npm-run-all --sequential js:browserify js:demo:browserify",
+        "js": "npm-run-all --sequential js:browserify js:uglify js:babel js:demo:browserify",
+        "js:dev": "npm-run-all --sequential js:browserify js:babel js:demo:browserify",
         "html": "html-minifier --collapse-whitespace --output ./_public/index.html ./_html/index.html",
         "html:dev": "html-minifier --output ./_public/index.html ./_html/index.html",
         "browsersync": "from-env cross-var browser-sync start --reload-debounce 3000 --proxy %DOMAIN --files \"./_public/*.js\"",
@@ -14,11 +15,13 @@
         "dev": "npm-run-all --parallel watch:* browsersync"
     },
     "devDependencies": {
+        "@babel/cli": "^7.2.3",
         "@babel/core": "^7.3.4",
         "@babel/plugin-proposal-class-properties": "^7.3.4",
         "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
         "@babel/plugin-proposal-optional-chaining": "^7.2.0",
         "@babel/plugin-transform-runtime": "^7.3.4",
+        "@babel/polyfill": "^7.2.5",
         "@babel/preset-env": "^7.3.4",
         "@babel/runtime": "^7.3.4",
         "babelify": "^10.0.0",
@@ -38,9 +41,9 @@
         "uglify": "^0.1.5"
     },
     "name": "tablewrap",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "",
-    "main": "_js/tablewrap.js",
+    "main": "_build/_js/tablewrap.js",
     "author": "",
     "license": "ISC",
     "browserslist": [
