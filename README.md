@@ -2,7 +2,7 @@
 
 tablewrap is a small javascript helper that wraps your html tables on small viewports column-wise.
 
-![demo](https://raw.githubusercontent.com/vielhuber/tablewrap/master/tablewrap.gif)
+![demo](https://raw.githubusercontent.com/vielhuber/tablewrap/main/tablewrap.gif)
 
 ## features
 
