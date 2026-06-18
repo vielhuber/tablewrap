@@ -9,7 +9,6 @@ export default defineConfig(({ mode }) => {
                     input: './_js/tablewrap.js',
                     output: {
                         format: 'iife',
-                        inlineDynamicImports: true,
                         entryFileNames: 'tablewrap.js',
                     },
                 },
@@ -27,8 +26,30 @@ export default defineConfig(({ mode }) => {
                     input: './_js/demo.js',
                     output: {
                         format: 'iife',
-                        inlineDynamicImports: true,
                         entryFileNames: 'demo.js',
+                    },
+                },
+                sourcemap: false,
+                minify: false,
+                emptyOutDir: false,
+            },
+        };
+    }
+    if (mode === 'package') {
+        return {
+            build: {
+                outDir: '_build/_js',
+                lib: {
+                    entry: {
+                        tablewrap: './_js/tablewrap.js',
+                        demo: './_js/demo.js',
+                    },
+                    formats: ['cjs'],
+                    fileName: (format, entryName) => entryName + '.js',
+                },
+                rollupOptions: {
+                    output: {
+                        exports: 'named',
                     },
                 },
                 sourcemap: false,

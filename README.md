@@ -10,7 +10,7 @@ tablewrap is a small javascript helper that wraps your html tables on small view
 -   no extra markup needed
 -   performant and lightweight
 -   comes as an es6 module
--   cross-browser-support (ie11)
+-   cross-browser-support
 -   support for preserving the first column
 
 ## installation

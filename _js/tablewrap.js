@@ -1,8 +1,3 @@
-import 'mdn-polyfills/Array.prototype.forEach';
-import 'mdn-polyfills/NodeList.prototype.forEach';
-import 'mdn-polyfills/Node.prototype.remove';
-import 'mdn-polyfills/Node.prototype.after';
-
 export default class Tablewrap {
     args = {};
     tables = [];
