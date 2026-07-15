@@ -1,3 +1,5 @@
+[![build status](https://github.com/vielhuber/tablewrap/actions/workflows/ci.yml/badge.svg)](https://github.com/vielhuber/tablewrap/actions)
+
 # 🖇 tablewrap 🖇
 
 tablewrap is a small javascript helper that wraps your html tables on small viewports column-wise.
