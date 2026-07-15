@@ -1,4 +1,10 @@
 [![build status](https://github.com/vielhuber/tablewrap/actions/workflows/ci.yml/badge.svg)](https://github.com/vielhuber/tablewrap/actions)
+[![GitHub Tag](https://img.shields.io/github/v/tag/vielhuber/tablewrap)](https://github.com/vielhuber/tablewrap/tags)
+[![Code Style](https://img.shields.io/badge/code_style-eslint-4B32C3.svg)](https://eslint.org/)
+[![License](https://img.shields.io/npm/l/tablewrap)](https://www.npmjs.com/package/tablewrap)
+[![Last Commit](https://img.shields.io/github/last-commit/vielhuber/tablewrap)](https://github.com/vielhuber/tablewrap/commits)
+[![npm Version](https://img.shields.io/npm/v/tablewrap)](https://www.npmjs.com/package/tablewrap)
+[![npm Downloads](https://img.shields.io/npm/dt/tablewrap)](https://www.npmjs.com/package/tablewrap)
 
 # 🖇 tablewrap 🖇
 
